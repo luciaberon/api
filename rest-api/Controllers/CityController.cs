@@ -32,12 +32,12 @@ namespace rest_api.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 // fetch data: weather
-                HttpResponseMessage responseWeather = await client.GetAsync(urlWeather);                    
+                HttpResponseMessage responseWeather = await client.GetAsync(urlWeather);
 
                 if (responseWeather.IsSuccessStatusCode)
-                {   
+                {
                     // read weather 
-                   string jsondataWeather = await responseWeather.Content.ReadAsStringAsync();
+                    string jsondataWeather = await responseWeather.Content.ReadAsStringAsync();
 
                     // deserialize to c# object
                     WeatherForecast weather = JsonSerializer.Deserialize<WeatherForecast>(jsondataWeather);
@@ -57,18 +57,18 @@ namespace rest_api.Controllers
                         string jsonStringResponse = JsonSerializer.Serialize(response, options);
 
                         // serialize object and return it
-                        return Content(jsonStringResponse, "application/json");                  
+                        return Content(jsonStringResponse, "application/json");
 
                     }
-
                 }
+            }
                 return NotFound(404);
             }
        
     }
 
-    }
 }
+
 
 public class Data
 {
