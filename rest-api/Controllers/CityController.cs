@@ -70,13 +70,3 @@ namespace rest_api.Controllers
 }
 
 
-public class Data
-{
-    public Data(Articles x, WeatherForecast y)
-    {
-        this.newsList = x;
-        this.weatherFor = y;
-    }
-    public Articles newsList { get; set; }
-    public WeatherForecast weatherFor { get; set; }
-}
