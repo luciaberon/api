@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using rest_api.Controllers;
 using rest_api.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace rest_api.Controllers
 {
@@ -16,6 +17,7 @@ namespace rest_api.Controllers
     [ApiController]
     public class CityController : ControllerBase
     {
+
         [HttpGet("{city}")]
         public async Task<ActionResult> GetInfo(string city)
         {
