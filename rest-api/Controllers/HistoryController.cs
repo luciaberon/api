@@ -28,7 +28,7 @@ namespace rest_api.Controllers
 
         [HttpPost]
         public ActionResult Post([FromBody]History history)
-        {
+        {   
             try
             {
             context.History.Add(history);
@@ -39,7 +39,6 @@ namespace rest_api.Controllers
                 return BadRequest();
             } 
             
-
         }
     }
 }
